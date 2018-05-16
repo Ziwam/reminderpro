@@ -93,7 +93,11 @@ html {
   .list .item {
     list-style-type: none;
     width: 300px;
-    margin: 20px 0; }
+    margin: 20px 0;
+    -webkit-animation: fade-in .5s .3s ease-out 1 normal backwards;
+    -moz-animation: fade-in .5s .3s ease-out 1 normal backwards;
+    -o-animation: fade-in .5s .3s ease-out 1 normal backwards;
+    animation: fade-in .5s .3s ease-out 1 normal backwards; }
     .list .item .date {
       color: #fff;
       text-align: right;
@@ -116,6 +120,9 @@ html {
         padding: 5px 0;
         margin-left: auto;
         text-align: center; }
+        @media (max-width: 768px) {
+          .list .item .task .delete-btn {
+            font-size: 16px; } }
       .list .item .task .text {
         font-family: "Microsoft_New_Tai";
         font-weight: bold;

@@ -13,8 +13,10 @@ class App extends Component {
 	}
 
 	addReminder() {
-		console.log('this.state', this.state.dueDate);
-		this.props.addReminder(this.state.text, this.state.dueDate);
+		if(this.state.dueDate && this.state.text){
+			this.props.addReminder(this.state.text, this.state.dueDate);
+			this.setState({text: "", dueDate: ""});
+		}
 	}
 
 	deleteReminder(id) {
@@ -57,10 +59,15 @@ class App extends Component {
 						onKeyPress={ev => {
 							if(ev.key === 'Enter')this.addReminder();
 						}}
+						value={this.state.text}
 						onChange={event => this.setState({text: event.target.value})}
 					/>
 					<input 
 						type="datetime-local"
+						onKeyPress={ev => {
+							if(ev.key === 'Enter')this.addReminder();
+						}}
+						value={this.state.dueDate}
 						onChange={event =>this.setState({dueDate: event.target.value})}/>
 					<button
 						type="button"

@@ -17,6 +17,9 @@
 		list-style-type: none;
 		width: 300px;
 		margin: 20px 0;
+		@include animation(
+			'fade-in .5s .3s ease-out 1 normal backwards'
+		);
 
 		.date {
 			color: #fff;
@@ -41,6 +44,9 @@
 				padding: 5px 0;
 				margin-left: auto;
 				text-align: center;
+				@include mobile {
+					font-size: 16px;
+				}
 			}
 
 			.text {
