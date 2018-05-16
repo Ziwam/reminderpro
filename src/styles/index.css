@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "LucidaSans";
+  src: url("../fonts/LucidaSansStd.otf"); }
+
+@font-face {
+  font-family: "Microsoft_New_Tai";
+  src: url("../fonts/ntailu.ttf"); }
+
+html, body {
+  height: 100%; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft_New_Tai", sans-serif; }
+
+html {
+  box-sizing: border-box; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; }
+  .App .background {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#e6b193 0%, #f9e6cd 60%);
+    background-attachment: fixed; }
+  .App .title {
+    padding-top: 25px;
+    text-align: center;
+    font-family: "LucidaSans";
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    color: #fff; }
+  .App .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 0 8px; }
+    .App .form * {
+      margin: 6px 8px; }
+    .App .form input {
+      width: 250px;
+      height: 36px;
+      font-weight: bold;
+      padding: 0 12px;
+      border: none;
+      letter-spacing: 1px;
+      font-size: 13px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      color: #636363; }
+  .App button {
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-family: "LucidaSans";
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    outline: inherit;
+    height: 36px;
+    margin: 8px;
+    padding: 0 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 6px; }
+    .App button.clear-btn {
+      background: #83c5df;
+      margin-top: 16px; }
+    .App button.add-btn {
+      background: #a3d39c; }
+
+.list {
+  padding: 0; }
+  .list .label {
+    width: 300px;
+    font-family: "LucidaSans";
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 12px 0;
+    color: #fff; }
+  .list .item {
+    list-style-type: none;
+    width: 300px;
+    margin: 20px 0; }
+    .list .item .date {
+      color: #fff;
+      text-align: right;
+      font-family: "LucidaSans";
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 8px 12px 10px;
+      margin-bottom: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 6px 6px 0 0; }
+    .list .item .task {
+      background: #fff;
+      padding: 0 12px 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 6px 6px; }
+      .list .item .task .delete-btn {
+        width: 30px;
+        font-size: 10px;
+        padding: 5px 0;
+        margin-left: auto;
+        text-align: center; }
+      .list .item .task .text {
+        font-family: "Microsoft_New_Tai";
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #636363; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    transform: translate(-100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-moz-keyframes slide-in-left {
+  0% {
+    transform: translate(-100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-o-keyframes slide-in-left {
+  0% {
+    transform: translate(-100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes slide-in-left {
+  0% {
+    transform: translate(-100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    transform: translate(100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-moz-keyframes slide-in-right {
+  0% {
+    transform: translate(100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-o-keyframes slide-in-right {
+  0% {
+    transform: translate(100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes slide-in-right {
+  0% {
+    transform: translate(100px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-webkit-keyframes slide-in-up {
+  0% {
+    transform: translate(0, 15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-moz-keyframes slide-in-up {
+  0% {
+    transform: translate(0, 15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-o-keyframes slide-in-up {
+  0% {
+    transform: translate(0, 15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes slide-in-up {
+  0% {
+    transform: translate(0, 15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-webkit-keyframes slide-in-down {
+  0% {
+    transform: translate(0, -15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-moz-keyframes slide-in-down {
+  0% {
+    transform: translate(0, -15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-o-keyframes slide-in-down {
+  0% {
+    transform: translate(0, -15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes slide-in-down {
+  0% {
+    transform: translate(0, -15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@-webkit-keyframes anim-shadow {
+  0% {
+    box-shadow: -0.1px 0.1px 0.1px 0.1px rgba(0, 0, 0, 0); }
+  100% { } }
+
+@-moz-keyframes anim-shadow {
+  0% {
+    box-shadow: -0.1px 0.1px 0.1px 0.1px rgba(0, 0, 0, 0); }
+  100% { } }
+
+@-o-keyframes anim-shadow {
+  0% {
+    box-shadow: -0.1px 0.1px 0.1px 0.1px rgba(0, 0, 0, 0); }
+  100% { } }
+
+@keyframes anim-shadow {
+  0% {
+    box-shadow: -0.1px 0.1px 0.1px 0.1px rgba(0, 0, 0, 0); }
+  100% { } }
+
+@-webkit-keyframes grow-skill {
+  0% {
+    transform: scale(0.92); }
+  100% { } }
+
+@-moz-keyframes grow-skill {
+  0% {
+    transform: scale(0.92); }
+  100% { } }
+
+@-o-keyframes grow-skill {
+  0% {
+    transform: scale(0.92); }
+  100% { } }
+
+@keyframes grow-skill {
+  0% {
+    transform: scale(0.92); }
+  100% { } }
+
+@-webkit-keyframes grow-card {
+  0% {
+    transform: scale(0.98); }
+  100% { } }
+
+@-moz-keyframes grow-card {
+  0% {
+    transform: scale(0.98); }
+  100% { } }
+
+@-o-keyframes grow-card {
+  0% {
+    transform: scale(0.98); }
+  100% { } }
+
+@keyframes grow-card {
+  0% {
+    transform: scale(0.98); }
+  100% { } }

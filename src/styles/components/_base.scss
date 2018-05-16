@@ -1,0 +1,29 @@
+@import '../helpers/_variables.scss';
+
+@font-face {
+  font-family: "LucidaSans";
+  src: url("../fonts/LucidaSansStd.otf");
+}
+
+@font-face {
+  font-family: "Microsoft_New_Tai";
+  src: url("../fonts/ntailu.ttf");
+}
+
+html, body {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body, sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}

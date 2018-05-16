@@ -24,18 +24,19 @@ class App extends Component {
 	renderReminders() {
 		const {reminders} = this.props;
 		return (
-			<ul className="list-group col-sm-4">
+			<ul className="list">
+			<div className="label">upcoming</div>
 				{
 					reminders.map(reminder => {
 						return (
-							<li key = {reminder.id} className="list-group-item">
-								<div className="list-item">
-									<div>{reminder.text}</div>
-									<div><em>{moment(new Date(reminder.dueDate)).fromNow()}</em></div>
+							<li key = {reminder.id} className="item">
+								<div className="date">{moment(new Date(reminder.dueDate)).fromNow()}</div>
+								<div className="task">
+									<div className="delete-btn"
+										onClick={()=>this.deleteReminder(reminder.id)}
+									> &#x2715; </div>
+									<div className="text">{reminder.text}</div>
 								</div>
-								<div className="list-item delete-button"
-									onClick={()=>this.deleteReminder(reminder.id)}
-								> &#x2715; </div>
 							</li>
 						)
 					})
@@ -48,39 +49,35 @@ class App extends Component {
 	render() {
 		return (
 		 	<div className="App">
-				<div className="title">
-					Reminder Pro
-				</div>
-				<div className="form-inline reminder-form">
-					<div className="form-group">
-						<input 
-							placeholder="I have to..." 
-							className="form-control"
-							onKeyPress={ev => {
-								if(ev.key === 'Enter')this.addReminder();
-							}}
-							onChange={event => this.setState({text: event.target.value})}
-						/>
-						<input 
-							type="datetime-local"
-							className="form-control"
-							onChange={event =>this.setState({dueDate: event.target.value})}/>
-					</div>
+		 	<div className="background"></div>
+				<h1 className="title">Reminder Pro</h1>
+				<div className="form">
+					<input 
+						placeholder="I Have To..." 
+						onKeyPress={ev => {
+							if(ev.key === 'Enter')this.addReminder();
+						}}
+						onChange={event => this.setState({text: event.target.value})}
+					/>
+					<input 
+						type="datetime-local"
+						onChange={event =>this.setState({dueDate: event.target.value})}/>
 					<button
 						type="button"
-						className="btn btn-success"
+						className="add-btn"
 						onClick={()=> this.addReminder()}
 					>
 					Add Reminder
 					</button>
 				</div>
-				{ this.renderReminders()}
-				<div 
-					className="btn btn-danger"
+				<button
+					type="button" 
+					className="clear-btn"
 					onClick={()=> this.props.clearReminders()}
 				>
 				Clear Reminders
-				</div>
+				</button>
+				{ this.renderReminders()}
 		 	</div>
 		);
 	}
